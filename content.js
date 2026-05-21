@@ -1,10 +1,6 @@
 (function () {
   function nuke() {
-    const hasComposer = Array.from(document.querySelectorAll("*")).some(
-      (el) =>
-        el.childElementCount === 0 &&
-        el.textContent.trim() === "What's on your mind?"
-    );
+    const hasComposer = !!document.querySelector('[aria-label="Create a post"]');
     if (!hasComposer) return;
 
     const main = document.querySelector('[role="main"]');
