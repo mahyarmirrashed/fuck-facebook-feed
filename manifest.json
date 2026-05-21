@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Fuck Facebook's Feed",
+  "version": "1.0.0",
+  "description": "Removes the Facebook feed.",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "*://*.facebook.com/*"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fuck-facebook-feed@local",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}
